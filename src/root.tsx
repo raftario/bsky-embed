@@ -10,10 +10,10 @@ export function Root({ url, children }: Params) {
   return (
     <html lang="en">
       <head>
-        <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta http-equiv="refresh" content={`0; url = ${u}`} />
 
-        <meta content="#0085FF" name="theme-color" />
+        <meta name="theme-color" content="#0085FF" />
         <meta name="og:url" content={u} />
         <meta name="og:site_name" content="bsky.app" />
         <meta name="twitter:card" content="summary_large_image" />
