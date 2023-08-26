@@ -1,0 +1,30 @@
+{
+  "name": "bsky-embed",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "fix": "eslint --ignore-path .gitignore --fix --ext .js,.tsx . && prettier --write .",
+    "lint": "prettier --check . && eslint --ignore-path .gitignore --ext .js,.tsx .",
+    "start": "node -r dotenv-expand/config dist/main.js"
+  },
+  "dependencies": {
+    "@atproto/api": "^0.6.6",
+    "dotenv": "^16.3.1",
+    "dotenv-expand": "^10.0.0",
+    "path-to-regexp": "^6.2.1",
+    "preact": "^10.17.1",
+    "preact-render-to-string": "^6.2.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^18.12.4",
+    "@tsconfig/strictest": "^2.0.1",
+    "@types/node": "*",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^3.0.2",
+    "typescript": "^5.2.2"
+  }
+}
