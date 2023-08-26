@@ -1,6 +1,8 @@
 import { env } from "node:process"
 
 import { BskyAgent } from "@atproto/api"
+import { type ViewImage } from "@atproto/api/dist/client/types/app/bsky/embed/images"
+import { type PostView } from "@atproto/api/dist/client/types/app/bsky/feed/defs"
 import { match } from "path-to-regexp"
 
 import { Root } from "./root"
@@ -51,6 +53,12 @@ async function tags(url: URL, agent: BskyAgent) {
       repo: profile.data.did,
       rkey: postPath.params.post,
     })
+    const postThread = await agent.getPostThread({ uri: post.uri })
+    if (!postThread.success) return
+
+    const postView = postThread.data.thread.post as PostView
+    const images = postView.embed?.images as ViewImage[] | undefined
+    console.dir(images, { depth: null })
 
     return (
       <>
